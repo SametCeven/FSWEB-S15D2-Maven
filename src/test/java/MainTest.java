@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 @ExtendWith(ResultAnalyzer.class)
 public class MainTest {
@@ -67,6 +68,7 @@ public class MainTest {
         assertThat(task1.getPriority(), instanceOf(Priority.class));
         assertThat(task1.getProject(), instanceOf(String.class));
         assertThat(task1.getStatus(), instanceOf(Status.class));
+
     }
 
     @DisplayName("TaskData sınıfı doğru access modifiers sahip mi")
@@ -147,6 +149,5 @@ public class MainTest {
         List<String> results = StringSet.findUniqueWords().stream().collect(Collectors.toList());
         assertEquals(results.get(0), "a");
         assertEquals(results.get(results.size()-1), "wrote");
-
     }
 }
